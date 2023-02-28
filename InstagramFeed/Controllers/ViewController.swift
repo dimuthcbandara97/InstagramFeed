@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "header")
         
         collectionView.register(HomeFeedHeaderCell.self, forCellWithReuseIdentifier: HomeFeedHeaderCell.identifier)
+        collectionView.register(PostHeaderCell.self, forCellWithReuseIdentifier: PostHeaderCell.identifier)
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "story")
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "feed")
@@ -74,7 +75,7 @@ class ViewController: UIViewController {
         // group
         let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(80), heightDimension: .absolute(80))
         let stroyGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: storyItem, count: 1)
-        
+        stroyGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 0)
         // section
         let storySection = NSCollectionLayoutSection(group: stroyGroup)
         storySection.orthogonalScrollingBehavior = .continuous
@@ -126,17 +127,23 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeFeedHeaderCell.identifier, for: indexPath)
             cell.backgroundColor = .cyan
             return cell
-        } else if indexPath.section == 0 {
+        } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "story", for: indexPath)
-            cell.backgroundColor = .green
+            let image = UIImageView(image: UIImage(named: "instagram"))
+            image.contentMode = .scaleAspectFill
+            image.clipsToBounds = true
+//            cell.backgroundColor = .green
             cell.layer.cornerRadius = 32
+            cell.backgroundView = image
             return cell
             
         } else  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feed", for: indexPath)
-            cell.backgroundColor = .brown
+
             if indexPath.row == 0 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostHeaderCell.identifier, for: indexPath)
                 cell.backgroundColor = .brown
+                return cell
             } else if indexPath.row == 1{
                 cell.backgroundColor = .red
             } else if indexPath.row == 2{
