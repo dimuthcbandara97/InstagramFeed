@@ -10,7 +10,6 @@
 		A229C26E29A5B6D000EBF810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A229C26D29A5B6D000EBF810 /* AppDelegate.swift */; };
 		A229C27029A5B6D000EBF810 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A229C26F29A5B6D000EBF810 /* SceneDelegate.swift */; };
 		A229C27229A5B6D000EBF810 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A229C27129A5B6D000EBF810 /* ViewController.swift */; };
-		A229C27529A5B6D000EBF810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A229C27329A5B6D000EBF810 /* Main.storyboard */; };
 		A229C27729A5B6D200EBF810 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A229C27629A5B6D200EBF810 /* Assets.xcassets */; };
 		A229C27A29A5B6D200EBF810 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A229C27829A5B6D200EBF810 /* LaunchScreen.storyboard */; };
 		A229C28529A5B6D200EBF810 /* InstagramFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A229C28429A5B6D200EBF810 /* InstagramFeedTests.swift */; };
@@ -40,7 +39,6 @@
 		A229C26D29A5B6D000EBF810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A229C26F29A5B6D000EBF810 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A229C27129A5B6D000EBF810 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A229C27429A5B6D000EBF810 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A229C27629A5B6D200EBF810 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A229C27929A5B6D200EBF810 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A229C27B29A5B6D200EBF810 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 				A229C26D29A5B6D000EBF810 /* AppDelegate.swift */,
 				A229C26F29A5B6D000EBF810 /* SceneDelegate.swift */,
 				A229C27129A5B6D000EBF810 /* ViewController.swift */,
-				A229C27329A5B6D000EBF810 /* Main.storyboard */,
 				A229C27629A5B6D200EBF810 /* Assets.xcassets */,
 				A229C27829A5B6D200EBF810 /* LaunchScreen.storyboard */,
 				A229C27B29A5B6D200EBF810 /* Info.plist */,
@@ -233,7 +230,6 @@
 			files = (
 				A229C27A29A5B6D200EBF810 /* LaunchScreen.storyboard in Resources */,
 				A229C27729A5B6D200EBF810 /* Assets.xcassets in Resources */,
-				A229C27529A5B6D000EBF810 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +293,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A229C27329A5B6D000EBF810 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A229C27429A5B6D000EBF810 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A229C27829A5B6D200EBF810 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -441,7 +429,6 @@
 				INFOPLIST_FILE = InstagramFeed/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,7 +455,6 @@
 				INFOPLIST_FILE = InstagramFeed/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
