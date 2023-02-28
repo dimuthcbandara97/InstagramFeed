@@ -69,11 +69,13 @@ class ViewController: UIViewController {
         let storyItem = NSCollectionLayoutItem(layoutSize: itemSize)
         
         // group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(80))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(80), heightDimension: .absolute(80))
         let stroyGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: storyItem, count: 1)
         
         // section
         let storySection = NSCollectionLayoutSection(group: stroyGroup)
+        storySection.orthogonalScrollingBehavior = .continuous
+        
         
         return storySection
     }
@@ -82,25 +84,54 @@ class ViewController: UIViewController {
     // Feed Layout
     private func createFeedLayout() -> NSCollectionLayoutSection {
         
+        // items
+        let postHeaderItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)))
+        let postImageItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(1)))
+        let postActionItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)))
+        let postCaptionItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(35)))
+        let postCommentSectionItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)))
+        
+        // group
+        let feedGroup = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(500)), subitems: [postHeaderItem, postImageItem,postActionItem,postCaptionItem,postCommentSectionItem])
+        
+        // section
+        let feedSection  = NSCollectionLayoutSection(group: feedGroup)
+        
+        return feedSection
     }
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 10
+    }
+    
     // collection View
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if section == 0 {
+            return 1
+        } else if section == 1 {
+            return 8
+        } else {
+            return 10
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath)
+            cell.backgroundColor = .cyan
             return cell
         } else if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "story", for: indexPath)
+            cell.backgroundColor = .green
+            cell.layer.cornerRadius = 32
             return cell
+            
         } else  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feed", for: indexPath)
+            cell.backgroundColor = .brown
             return cell
         }
     }
