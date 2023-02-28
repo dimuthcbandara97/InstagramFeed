@@ -50,7 +50,8 @@ class PostActionCell: UICollectionViewCell {
         addSubview(saveImageView)
         saveImageView.translatesAutoresizingMaskIntoConstraints = false
         saveImageView.tintColor = .label
-        saveImageView.image = UIImage(systemName: "bookmark")
+        let config = UIImage.SymbolConfiguration(weight: .ultraLight)
+        saveImageView.image = UIImage(systemName: "bookmark",withConfiguration: config)
         
         NSLayoutConstraint.activate([
         

@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         collectionView.register(HomeFeedHeaderCell.self, forCellWithReuseIdentifier: HomeFeedHeaderCell.identifier)
         collectionView.register(PostHeaderCell.self, forCellWithReuseIdentifier: PostHeaderCell.identifier)
         collectionView.register(PostActionCell.self, forCellWithReuseIdentifier: PostActionCell.identifier)
+        collectionView.register(PostCaptionCell.self, forCellWithReuseIdentifier: PostCaptionCell.identifier)
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "story")
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "feed")
@@ -161,7 +162,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
                 return cell
             }
             else if indexPath.row == 3{
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier:PostCaptionCell.identifier, for: indexPath)
                 cell.backgroundColor = .magenta
+                return cell
             }
             else if indexPath.row == 4{
                 cell.backgroundColor = .orange
