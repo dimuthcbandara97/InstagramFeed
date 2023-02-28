@@ -15,8 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = .blue
-        
+//        view.backgroundColor = .blue
         configureCollectionView()
     }
 
@@ -29,6 +28,7 @@ class ViewController: UIViewController {
         collectionView.register(PostHeaderCell.self, forCellWithReuseIdentifier: PostHeaderCell.identifier)
         collectionView.register(PostActionCell.self, forCellWithReuseIdentifier: PostActionCell.identifier)
         collectionView.register(PostCaptionCell.self, forCellWithReuseIdentifier: PostCaptionCell.identifier)
+        collectionView.register(PostComentSectionCell.self, forCellWithReuseIdentifier: PostComentSectionCell.identifier)
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "story")
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "feed")
@@ -127,7 +127,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeFeedHeaderCell.identifier, for: indexPath)
-            cell.backgroundColor = .cyan
+//            cell.backgroundColor = .cyan
             return cell
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "story", for: indexPath)
@@ -144,9 +144,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
 
             if indexPath.row == 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostHeaderCell.identifier, for: indexPath)
-                cell.backgroundColor = .brown
+//                cell.backgroundColor = .brown
                 return cell
-            } else if indexPath.row == 1{
+            }
+            else if indexPath.row == 1{
+                
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feed", for: indexPath)
                 let image = UIImageView(image: UIImage(named: "mars"))
                 image.contentMode = .scaleAspectFill
@@ -158,16 +160,18 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
             }
             else if indexPath.row == 2{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostActionCell.identifier, for: indexPath)
-                cell.backgroundColor = .blue
+//                cell.backgroundColor = .blue
                 return cell
             }
             else if indexPath.row == 3{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier:PostCaptionCell.identifier, for: indexPath)
-                cell.backgroundColor = .magenta
+//                cell.backgroundColor = .magenta
                 return cell
             }
             else if indexPath.row == 4{
-                cell.backgroundColor = .orange
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier:PostComentSectionCell.identifier, for: indexPath)
+//                cell.backgroundColor = .orange
+                return cell
             }
             return cell
         }
