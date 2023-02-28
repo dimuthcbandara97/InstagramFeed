@@ -1,6 +1,6 @@
 # InstagramFeed
 
-In this project Instagram UI will be developed with the support of four sections
+Instagram UI can be divided into four sections
 01) Top Navigation bar
 02) Home Stories
 03) Post -> Header , Content, Description
