@@ -24,6 +24,9 @@ class ViewController: UIViewController {
         let collectionView  = UICollectionView(frame: view.bounds, collectionViewLayout: createFlowLayout())
         view.addSubview(collectionView)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "header")
+        
+        collectionView.register(HomeFeedHeaderCell.self, forCellWithReuseIdentifier: HomeFeedHeaderCell.identifier)
+        
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "story")
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "feed")
         collectionView.delegate = self
@@ -49,11 +52,11 @@ class ViewController: UIViewController {
     // Header Layout
     private func createHeaderLayout() -> NSCollectionLayoutSection {
         // item
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(75))
         let headerItem = NSCollectionLayoutItem(layoutSize: itemSize
         )
         // group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(75 ))
         let headerGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem:  headerItem, count: 1)
         // section
         let headerSection = NSCollectionLayoutSection(group:  headerGroup)
@@ -120,7 +123,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "header", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeFeedHeaderCell.identifier, for: indexPath)
             cell.backgroundColor = .cyan
             return cell
         } else if indexPath.section == 0 {
