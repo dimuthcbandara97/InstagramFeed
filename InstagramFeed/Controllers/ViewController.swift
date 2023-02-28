@@ -132,6 +132,17 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
         } else  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feed", for: indexPath)
             cell.backgroundColor = .brown
+            if indexPath.row == 0 {
+                cell.backgroundColor = .brown
+            } else if indexPath.row == 1{
+                cell.backgroundColor = .red
+            } else if indexPath.row == 2{
+                cell.backgroundColor = .blue
+            } else if indexPath.row == 3{
+                cell.backgroundColor = .magenta
+            } else if indexPath.row == 4{
+                cell.backgroundColor = .orange
+            }
             return cell
         }
     }
