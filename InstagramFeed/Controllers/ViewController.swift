@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         
         collectionView.register(HomeFeedHeaderCell.self, forCellWithReuseIdentifier: HomeFeedHeaderCell.identifier)
         collectionView.register(PostHeaderCell.self, forCellWithReuseIdentifier: PostHeaderCell.identifier)
+        collectionView.register(PostActionCell.self, forCellWithReuseIdentifier: PostActionCell.identifier)
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "story")
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "feed")
@@ -145,12 +146,24 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
                 cell.backgroundColor = .brown
                 return cell
             } else if indexPath.row == 1{
-                cell.backgroundColor = .red
-            } else if indexPath.row == 2{
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "feed", for: indexPath)
+                let image = UIImageView(image: UIImage(named: "mars"))
+                image.contentMode = .scaleAspectFill
+                image.clipsToBounds = true
+                cell.backgroundView = image
+                
+                return cell
+                
+            }
+            else if indexPath.row == 2{
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostActionCell.identifier, for: indexPath)
                 cell.backgroundColor = .blue
-            } else if indexPath.row == 3{
+                return cell
+            }
+            else if indexPath.row == 3{
                 cell.backgroundColor = .magenta
-            } else if indexPath.row == 4{
+            }
+            else if indexPath.row == 4{
                 cell.backgroundColor = .orange
             }
             return cell
