@@ -74,6 +74,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A21C43C029AD9048007E79DD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A229C27129A5B6D000EBF810 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A21C43C129AD92AC007E79DD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		A229C26129A5B6D000EBF810 = {
 			isa = PBXGroup;
 			children = (
@@ -97,9 +112,10 @@
 		A229C26C29A5B6D000EBF810 /* InstagramFeed */ = {
 			isa = PBXGroup;
 			children = (
+				A21C43C129AD92AC007E79DD /* Networking */,
+				A21C43C029AD9048007E79DD /* Controllers */,
 				A229C26D29A5B6D000EBF810 /* AppDelegate.swift */,
 				A229C26F29A5B6D000EBF810 /* SceneDelegate.swift */,
-				A229C27129A5B6D000EBF810 /* ViewController.swift */,
 				A229C27629A5B6D200EBF810 /* Assets.xcassets */,
 				A229C27829A5B6D200EBF810 /* LaunchScreen.storyboard */,
 				A229C27B29A5B6D200EBF810 /* Info.plist */,
